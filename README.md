@@ -30,6 +30,14 @@ $ composer require aecy/badge
 $ php artisan vendor:publish --provider='Aecy\Badge\BadgeServiceProvider' --tag="migrations"
 ```
 
+The badge for your `Comment` model is already create and good for using in your application, for using it on `Comment` 
+you need to add this trait in your model.
+```php
+use Badgeable;
+```
+
+> DON'T FORGET : IMPORT THE CLASS.
+
 ## Create Badge
 
 Create your own badge, in `App\Events\` create `Premium.php`
