@@ -76,6 +76,19 @@ public function onPremium ($event)
 
 You're done !
 
+## PHPUnit Tests
+
+And if you want, you can create a phpunit test for check the unlock of your own badge like this :
+```php
+public function test_unlock_premium_badge()
+{
+    Badge::create(['name' => 'Premium', 'action' => 'premium', 'action_count' => 0]);
+    $user = factory(User::class)->create();
+    event(new Premium($user));
+    $this->assertEquals(1, $user->badges()->count());
+}
+```
+
 ## License
 
 MIT
