@@ -1,0 +1,26 @@
+{
+    "name": "aecy/badge",
+    "description": "Add badge system to your laravel project",
+    "type": "laravel",
+    "license": "MIT",
+    "authors": [
+    	{
+    		"name": "aecy",
+    		"email": "jtexpulse@hotmail.com"
+    	}
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aecy\\Badge\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aecy\\Badge\\Providers\\BadgeServiceProvider"
+            ]
+        }
+    }
+}
