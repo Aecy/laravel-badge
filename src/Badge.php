@@ -16,23 +16,24 @@ class Badge extends Model
 		return $this->hasMany(BadgeUnlock::class);
 	}
 
-	/*
-	* @param User $user
-	* @return bool
-	*/
-	public function isUnlockedFor(User $user): bool
+    /**
+     * @param User $user
+     * @return bool
+     */
+    public function isUnlockedFor(User $user): bool
 	{
 		return $this->unlocks()
 			->where('user_id', $user->id)
 			->exists();
 	}
 
-	/*
-	* @param User $user
-	* @param string $action
-	* @param int $count
-	*/
-	public function unlockActionFor(User $user, string $action, int $count = 0)
+    /**
+     * @param User $user
+     * @param string $action
+     * @param int $count
+     * @return \Illuminate\Database\Eloquent\Builder|Model|null|object
+     */
+    public function unlockActionFor(User $user, string $action, int $count = 0)
 	{
 		$badge = $this->newQuery()
 			->where('action', $action)
